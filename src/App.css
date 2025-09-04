@@ -1,5 +1,5 @@
 :root {
-  /* Light mode colors - Soft, calming palette */
+  /* Default theme - Soft, calming palette */
   --bg-primary-light: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffd3a5 100%);
   --bg-secondary-light: rgba(255, 255, 255, 0.85);
   --text-primary-light: #2d5016;
@@ -17,7 +17,6 @@
   --info-light: #64b5f6;
   --info-hover-light: #42a5f5;
   
-  /* Dark mode colors - Deep, soothing palette */
   --bg-primary-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   --bg-secondary-dark: rgba(26, 26, 46, 0.8);
   --text-primary-dark: #e8f5e8;
@@ -34,6 +33,154 @@
   --danger-hover-dark: #ef5350;
   --info-dark: #64b5f6;
   --info-hover-dark: #42a5f5;
+}
+
+/* Dracula Theme */
+[data-theme="dracula"] {
+  --bg-primary-light: linear-gradient(135deg, #f8f8f2 0%, #f1f1eb 50%, #e8e8e0 100%);
+  --bg-secondary-light: rgba(248, 248, 242, 0.9);
+  --text-primary-light: #282a36;
+  --text-secondary-light: #44475a;
+  --text-muted-light: #6272a4;
+  --input-bg-light: rgba(248, 248, 242, 0.95);
+  --input-text-light: #282a36;
+  --shadow-light: rgba(40, 42, 54, 0.15);
+  --accent-light: #50fa7b;
+  --accent-hover-light: #3dd865;
+  --warning-light: #ffb86c;
+  --warning-hover-light: #ffa94d;
+  --danger-light: #ff5555;
+  --danger-hover-light: #ff3333;
+  --info-light: #8be9fd;
+  --info-hover-light: #6dd5f7;
+  
+  --bg-primary-dark: linear-gradient(135deg, #282a36 0%, #21222c 50%, #1e1f29 100%);
+  --bg-secondary-dark: rgba(40, 42, 54, 0.9);
+  --text-primary-dark: #f8f8f2;
+  --text-secondary-dark: #e6e6e0;
+  --text-muted-dark: #6272a4;
+  --input-bg-dark: rgba(40, 42, 54, 0.8);
+  --input-text-dark: #f8f8f2;
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --accent-dark: #50fa7b;
+  --accent-hover-dark: #3dd865;
+  --warning-dark: #ffb86c;
+  --warning-hover-dark: #ffa94d;
+  --danger-dark: #ff5555;
+  --danger-hover-dark: #ff3333;
+  --info-dark: #8be9fd;
+  --info-hover-dark: #6dd5f7;
+}
+
+/* Solarized Theme */
+[data-theme="solarized"] {
+  --bg-primary-light: linear-gradient(135deg, #fdf6e3 0%, #eee8d5 50%, #e6e0c8 100%);
+  --bg-secondary-light: rgba(253, 246, 227, 0.9);
+  --text-primary-light: #073642;
+  --text-secondary-light: #586e75;
+  --text-muted-light: #93a1a1;
+  --input-bg-light: rgba(253, 246, 227, 0.95);
+  --input-text-light: #073642;
+  --shadow-light: rgba(7, 54, 66, 0.15);
+  --accent-light: #859900;
+  --accent-hover-light: #6b7c00;
+  --warning-light: #b58900;
+  --warning-hover-light: #9a7500;
+  --danger-light: #dc322f;
+  --danger-hover-light: #c62d2a;
+  --info-light: #268bd2;
+  --info-hover-light: #1e7bb8;
+  
+  --bg-primary-dark: linear-gradient(135deg, #002b36 0%, #001f2a 50%, #001419 100%);
+  --bg-secondary-dark: rgba(0, 43, 54, 0.9);
+  --text-primary-dark: #fdf6e3;
+  --text-secondary-dark: #eee8d5;
+  --text-muted-dark: #93a1a1;
+  --input-bg-dark: rgba(0, 43, 54, 0.8);
+  --input-text-dark: #fdf6e3;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --accent-dark: #859900;
+  --accent-hover-dark: #6b7c00;
+  --warning-dark: #b58900;
+  --warning-hover-dark: #9a7500;
+  --danger-dark: #dc322f;
+  --danger-hover-dark: #c62d2a;
+  --info-dark: #268bd2;
+  --info-hover-dark: #1e7bb8;
+}
+
+/* Nord Theme */
+[data-theme="nord"] {
+  --bg-primary-light: linear-gradient(135deg, #eceff4 0%, #e5e9f0 50%, #d8dee9 100%);
+  --bg-secondary-light: rgba(236, 239, 244, 0.9);
+  --text-primary-light: #2e3440;
+  --text-secondary-light: #3b4252;
+  --text-muted-light: #4c566a;
+  --input-bg-light: rgba(236, 239, 244, 0.95);
+  --input-text-light: #2e3440;
+  --shadow-light: rgba(46, 52, 64, 0.15);
+  --accent-light: #88c0d0;
+  --accent-hover-light: #5e81ac;
+  --warning-light: #ebcb8b;
+  --warning-hover-light: #d08770;
+  --danger-light: #bf616a;
+  --danger-hover-light: #a54e56;
+  --info-light: #81a1c1;
+  --info-hover-light: #5e81ac;
+  
+  --bg-primary-dark: linear-gradient(135deg, #2e3440 0%, #3b4252 50%, #434c5e 100%);
+  --bg-secondary-dark: rgba(46, 52, 64, 0.9);
+  --text-primary-dark: #eceff4;
+  --text-secondary-dark: #e5e9f0;
+  --text-muted-dark: #4c566a;
+  --input-bg-dark: rgba(46, 52, 64, 0.8);
+  --input-text-dark: #eceff4;
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --accent-dark: #88c0d0;
+  --accent-hover-dark: #5e81ac;
+  --warning-dark: #ebcb8b;
+  --warning-hover-dark: #d08770;
+  --danger-dark: #bf616a;
+  --danger-hover-dark: #a54e56;
+  --info-dark: #81a1c1;
+  --info-hover-dark: #5e81ac;
+}
+
+/* Tokyo Night Theme */
+[data-theme="tokyo-night"] {
+  --bg-primary-light: linear-gradient(135deg, #d5d6db 0%, #c0c0c0 50%, #a9b1d6 100%);
+  --bg-secondary-light: rgba(213, 214, 219, 0.9);
+  --text-primary-light: #1a1b26;
+  --text-secondary-light: #2d3748;
+  --text-muted-light: #565f89;
+  --input-bg-light: rgba(213, 214, 219, 0.95);
+  --input-text-light: #1a1b26;
+  --shadow-light: rgba(26, 27, 38, 0.15);
+  --accent-light: #7aa2f7;
+  --accent-hover-light: #5a8ae8;
+  --warning-light: #e0af68;
+  --warning-hover-light: #d4a657;
+  --danger-light: #f7768e;
+  --danger-hover-light: #f55a7a;
+  --info-light: #7dcfff;
+  --info-hover-light: #5bb8e8;
+  
+  --bg-primary-dark: linear-gradient(135deg, #1a1b26 0%, #16161e 50%, #0f0f14 100%);
+  --bg-secondary-dark: rgba(26, 27, 38, 0.9);
+  --text-primary-dark: #a9b1d6;
+  --text-secondary-dark: #9aa5ce;
+  --text-muted-dark: #565f89;
+  --input-bg-dark: rgba(26, 27, 38, 0.8);
+  --input-text-dark: #a9b1d6;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --accent-dark: #7aa2f7;
+  --accent-hover-dark: #5a8ae8;
+  --warning-dark: #e0af68;
+  --warning-hover-dark: #d4a657;
+  --danger-dark: #f7768e;
+  --danger-hover-dark: #f55a7a;
+  --info-dark: #7dcfff;
+  --info-hover-dark: #5bb8e8;
 }
 
 .App {
@@ -909,5 +1056,121 @@ h1 {
   
   .info-modal h2 {
     font-size: 1.4rem;
+  }
+}
+
+/* Theme Selector */
+.theme-selector {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+.theme-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.App.dark-mode .theme-button {
+  box-shadow: 0 4px 15px var(--shadow-dark);
+}
+
+.theme-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.App.dark-mode .theme-button:hover {
+  box-shadow: 0 6px 20px var(--shadow-dark);
+}
+
+.theme-button.active {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.App.dark-mode .theme-button.active {
+  box-shadow: 0 0 0 3px var(--accent-dark);
+}
+
+/* Theme color previews */
+.theme-default {
+  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffd3a5 100%);
+}
+
+.theme-dracula {
+  background: linear-gradient(135deg, #f8f8f2 0%, #282a36 50%, #ff5555 100%);
+}
+
+.theme-solarized {
+  background: linear-gradient(135deg, #fdf6e3 0%, #eee8d5 50%, #859900 100%);
+}
+
+.theme-nord {
+  background: linear-gradient(135deg, #eceff4 0%, #e5e9f0 50%, #88c0d0 100%);
+}
+
+.theme-tokyo-night {
+  background: linear-gradient(135deg, #d5d6db 0%, #c0c0c0 50%, #7aa2f7 100%);
+}
+
+/* Theme selector tooltip */
+.theme-button::after {
+  content: attr(data-theme-name);
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-secondary-light);
+  color: var(--text-primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  z-index: 1000;
+}
+
+.App.dark-mode .theme-button::after {
+  background: var(--bg-secondary-dark);
+  color: var(--text-primary-dark);
+  box-shadow: 0 4px 15px var(--shadow-dark);
+}
+
+.theme-button:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments for theme selector */
+@media (max-width: 768px) {
+  .theme-selector {
+    top: 1rem;
+    left: 1rem;
+    gap: 0.3rem;
+  }
+  
+  .theme-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .theme-button::after {
+    left: 40px;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 }

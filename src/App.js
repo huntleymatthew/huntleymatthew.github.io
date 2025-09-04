@@ -18,6 +18,7 @@ function App() {
   const [sessionStartTime, setSessionStartTime] = useState(null);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('default');
 
   // Load sessions from localStorage on component mount
   useEffect(() => {
@@ -32,6 +33,14 @@ function App() {
     const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
     if (!hasSeenWelcome) {
       setShowWelcomeModal(true);
+    }
+  }, []);
+
+  // Load theme from localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+      setCurrentTheme(savedTheme);
     }
   }, []);
 
@@ -50,6 +59,11 @@ function App() {
   useEffect(() => {
     document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
   }, [isDarkMode]);
+
+  // Apply selected theme to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
 
   // Timer countdown effect
   useEffect(() => {
@@ -233,8 +247,34 @@ function App() {
     setShowInfoModal(false);
   };
 
+  const handleThemeChange = (theme) => {
+    setCurrentTheme(theme);
+    localStorage.setItem('selectedTheme', theme);
+  };
+
+  const themes = [
+    { id: 'default', name: 'Default' },
+    { id: 'dracula', name: 'Dracula' },
+    { id: 'solarized', name: 'Solarized' },
+    { id: 'nord', name: 'Nord' },
+    { id: 'tokyo-night', name: 'Tokyo Night' }
+  ];
+
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      {/* Theme Selector */}
+      <div className="theme-selector">
+        {themes.map(theme => (
+          <button
+            key={theme.id}
+            className={`theme-button theme-${theme.id} ${currentTheme === theme.id ? 'active' : ''}`}
+            onClick={() => handleThemeChange(theme.id)}
+            data-theme-name={theme.name}
+            title={theme.name}
+          />
+        ))}
+      </div>
+
       <header className="App-header">
         <h1>Focus Timer</h1>
         <button className="info-icon" onClick={handleInfoOpen} title="Instructions">
