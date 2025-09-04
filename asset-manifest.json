@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/huntleymatthew/huntleymatthew.github.io/static/css/main.ef588dd2.css",
-    "main.js": "/huntleymatthew/huntleymatthew.github.io/static/js/main.861b46f2.js",
-    "index.html": "/huntleymatthew/huntleymatthew.github.io/index.html",
-    "main.ef588dd2.css.map": "/huntleymatthew/huntleymatthew.github.io/static/css/main.ef588dd2.css.map",
-    "main.861b46f2.js.map": "/huntleymatthew/huntleymatthew.github.io/static/js/main.861b46f2.js.map"
+    "main.css": "/static/css/main.ef588dd2.css",
+    "main.js": "/static/js/main.861b46f2.js",
+    "index.html": "/index.html",
+    "main.ef588dd2.css.map": "/static/css/main.ef588dd2.css.map",
+    "main.861b46f2.js.map": "/static/js/main.861b46f2.js.map"
   },
   "entrypoints": [
     "static/css/main.ef588dd2.css",
