@@ -78,9 +78,9 @@ function App() {
   // Update browser tab title based on current state
   useEffect(() => {
     if (isRunning) {
-      document.title = `Focus Timer - ${formatTime(timeLeft)}`;
+      document.title = `${formatTime(timeLeft)} - Focus Timer`;
     } else if (isBreakRunning) {
-      document.title = `Break Time - ${formatTime(breakTimeLeft)}`;
+      document.title = `${formatTime(breakTimeLeft)} - Break Time`;
     } else {
       document.title = 'Focus Timer';
     }
