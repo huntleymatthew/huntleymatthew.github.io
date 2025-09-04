@@ -16,12 +16,22 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [sessionStartTime, setSessionStartTime] = useState(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+  const [showInfoModal, setShowInfoModal] = useState(false);
 
   // Load sessions from localStorage on component mount
   useEffect(() => {
     const savedSessions = localStorage.getItem('focusSessions');
     if (savedSessions) {
       setSessions(JSON.parse(savedSessions));
+    }
+  }, []);
+
+  // Check if user has seen welcome modal
+  useEffect(() => {
+    const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
+    if (!hasSeenWelcome) {
+      setShowWelcomeModal(true);
     }
   }, []);
 
@@ -210,10 +220,26 @@ function App() {
     return sessions.reduce((total, session) => total + session.duration, 0);
   };
 
+  const handleWelcomeClose = () => {
+    setShowWelcomeModal(false);
+    localStorage.setItem('hasSeenWelcome', 'true');
+  };
+
+  const handleInfoOpen = () => {
+    setShowInfoModal(true);
+  };
+
+  const handleInfoClose = () => {
+    setShowInfoModal(false);
+  };
+
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <header className="App-header">
         <h1>Focus Timer</h1>
+        <button className="info-icon" onClick={handleInfoOpen} title="Instructions">
+          ℹ️
+        </button>
         
         {!isRunning && !showNamePrompt && !showBreakPrompt && !isBreakRunning && !showBreakComplete && (
           <div className="timer-setup">
@@ -345,6 +371,75 @@ function App() {
                   Cancel
                 </button>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Welcome Modal */}
+        {showWelcomeModal && (
+          <div className="modal-overlay">
+            <div className="welcome-modal">
+              <h2>Welcome to Focus Timer! 🎯</h2>
+              <div className="instructions">
+                <h3>What is this app?</h3>
+                <p>Focus Timer helps you stay productive using the Pomodoro Technique - work in focused 25-minute sessions with short breaks in between.</p>
+                
+                <h3>How to use it:</h3>
+                <ol>
+                  <li><strong>Set your timer</strong> - Choose how long you want to focus (1-120 minutes)</li>
+                  <li><strong>Start your session</strong> - Click "Start Timer" and focus on your task</li>
+                  <li><strong>Stay focused</strong> - If you get distracted, click "Lost Focus" to reset</li>
+                  <li><strong>Complete your session</strong> - When the timer ends, name your session and it will be saved</li>
+                  <li><strong>Take a break</strong> - Choose a break duration or skip to start a new focus session</li>
+                </ol>
+
+                <h3>Features:</h3>
+                <ul>
+                  <li>📊 <strong>Session tracking</strong> - See all your completed focus sessions</li>
+                  <li>🌙 <strong>Dark/Light mode</strong> - Automatically matches your system preference</li>
+                  <li>🔔 <strong>Audio alerts</strong> - Hear a chime when timers complete</li>
+                  <li>📱 <strong>Responsive design</strong> - Works on desktop and mobile</li>
+                  <li>💾 <strong>Local storage</strong> - Your sessions are saved on your device</li>
+                </ul>
+
+                <p className="tip">💡 <strong>Pro tip:</strong> The browser tab title shows your current timer, so you can see your progress even when the tab isn't active!</p>
+              </div>
+              <button onClick={handleWelcomeClose} className="start-btn">
+                Let's Get Focused! 🚀
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Info Modal */}
+        {showInfoModal && (
+          <div className="modal-overlay">
+            <div className="info-modal">
+              <h2>Focus Timer Instructions ℹ️</h2>
+              <div className="instructions">
+                <h3>How to use Focus Timer:</h3>
+                <ol>
+                  <li><strong>Set your timer</strong> - Choose how long you want to focus (1-120 minutes)</li>
+                  <li><strong>Start your session</strong> - Click "Start Timer" and focus on your task</li>
+                  <li><strong>Stay focused</strong> - If you get distracted, click "Lost Focus" to reset</li>
+                  <li><strong>Complete your session</strong> - When the timer ends, name your session and it will be saved</li>
+                  <li><strong>Take a break</strong> - Choose a break duration or skip to start a new focus session</li>
+                </ol>
+
+                <h3>Features:</h3>
+                <ul>
+                  <li>📊 <strong>Session tracking</strong> - See all your completed focus sessions</li>
+                  <li>🌙 <strong>Dark/Light mode</strong> - Automatically matches your system preference</li>
+                  <li>🔔 <strong>Audio alerts</strong> - Hear a chime when timers complete</li>
+                  <li>📱 <strong>Responsive design</strong> - Works on desktop and mobile</li>
+                  <li>💾 <strong>Local storage</strong> - Your sessions are saved on your device</li>
+                </ul>
+
+                <p className="tip">💡 <strong>Pro tip:</strong> The browser tab title shows your current timer, so you can see your progress even when the tab isn't active!</p>
+              </div>
+              <button onClick={handleInfoClose} className="start-btn">
+                Got it! 👍
+              </button>
             </div>
           </div>
         )}
