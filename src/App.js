@@ -343,7 +343,7 @@ function App() {
               Clear All Sessions
             </button>
             <div className="sessions-list">
-              {sessions.map(session => (
+              {sessions.slice().reverse().map(session => (
                 <div key={session.id} className="session-item">
                   <span className="session-name">{session.name}</span>
                   <span className="session-duration">
