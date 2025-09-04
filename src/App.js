@@ -128,15 +128,16 @@ function App() {
 
   const handleSessionSave = () => {
     if (sessionName.trim()) {
-      const endTime = new Date();
+      // Calculate the actual end time based on start time + duration
+      const actualEndTime = new Date(sessionStartTime.getTime() + (timerDuration * 60 * 1000));
       const newSession = {
         id: Date.now(),
         name: sessionName,
         duration: timerDuration,
         completed: true,
         startTime: sessionStartTime,
-        endTime: endTime,
-        timestamp: endTime.toISOString()
+        endTime: actualEndTime,
+        timestamp: actualEndTime.toISOString()
       };
       
       const updatedSessions = [...sessions, newSession];
