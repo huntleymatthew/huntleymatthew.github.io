@@ -222,8 +222,8 @@ h1 {
   background: var(--accent-light);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
