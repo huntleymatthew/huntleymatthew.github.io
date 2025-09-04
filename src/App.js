@@ -311,7 +311,7 @@ function App() {
           <div className="sessions">
             <h3>Previous Sessions</h3>
             <div className="total-focus-time">
-              Your total Focus time is {calculateTotalFocusTime()} minutes
+              Your total focus time is {calculateTotalFocusTime()} {calculateTotalFocusTime() === 1 ? 'minute' : 'minutes'}
             </div>
             <button onClick={showClearConfirmation} className="clear-btn">
               Clear All Sessions
