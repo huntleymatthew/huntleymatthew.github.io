@@ -388,6 +388,19 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.total-focus-time {
+  background: var(--bg-secondary-light);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4CAF50;
+  text-align: center;
+  border: 2px solid rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
 .clear-btn {
   background: #ff9800;
   color: white;

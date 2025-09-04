@@ -206,6 +206,10 @@ function App() {
     setShowClearConfirm(false);
   };
 
+  const calculateTotalFocusTime = () => {
+    return sessions.reduce((total, session) => total + session.duration, 0);
+  };
+
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <header className="App-header">
@@ -306,6 +310,9 @@ function App() {
         {sessions.length > 0 && (
           <div className="sessions">
             <h3>Previous Sessions</h3>
+            <div className="total-focus-time">
+              Your total Focus time is {calculateTotalFocusTime()} minutes
+            </div>
             <button onClick={showClearConfirmation} className="clear-btn">
               Clear All Sessions
             </button>
